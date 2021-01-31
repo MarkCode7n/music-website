@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny Music | Albums</title>
+    <script src="/scripts/fontawesome.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="albums.css">
+<link rel="stylesheet" href="/styles/keyframes.css">
+</head>
+	
+<body>
+<div class="loader ctx-res" id="loader">
+    <div class="loader-outset ctx-res">
+        <div class="loader-inset ctx-res">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ===*===NAVIGATION-BAR -->
+<div class="top__header">
+    <nav class="navigation-bar grid-it">
+        <div class="navigation-bar__logo__">
+            <a href="javascript:void()" class="logo__link__" onclick="window.location.reload()">
+                <h3>DM</h3>
+            </a>
+        </div>
+
+        <div class="navigation-bar__menu nav" id="nav__menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/index.html#home" class="nav__link">home</a></li>
+                <li class="nav__item"><a href="/index.html#about" class="nav__link">about</a></li>
+                <li class="nav__item"><a href="/index.html#albums" class="nav__link">albums</a></li>
+                <li class="nav__item"><a href="/index.html#gallery" class="nav__link">gallery</a></li>
+                <li class="nav__item"><a href="/index.html#blogs" class="nav__link">blogs</a></li>
+                <li class="nav__item"><a href="/index.html#contact" class="nav__link">contact</a></li>
+            </ul>
+        </div>
+
+        <div class="navigation-bar__toggle__btn" id="toggleNav">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</div>
+    <section class="album album-sect" id="album">
+        <!--  -->
+        <div class="album-sect__container">
+            <!--  -->
+            <div class="album__container">
+                <!--  -->
+                <div class="description">
+
+                    <div class="album__container-big-image">
+                        <img src="/assets/images/display/vinyl.png" alt="album">
+                    </div>
+                    <!--  -->
+                    <div class="album__container-album-title">
+                        <h3>I'm Your Dreams Just Like</h3>
+                    </div> 
+                    <!--  -->
+                    <div class="album__container-album-desc">
+                        <p>
+                            <span>Released :</span> <span class="dark-greyed">13/09/2017</span><br>
+                            <span>Label :</span> <span class="dark-greyed">I am the Best, RED</span><br>
+                            <span>Format :</span> <span class="dark-greyed">Digital download, C</span><br>
+                            <span>Certifications :</span> <span class="dark-greyed">RIAA: Gold</span><br>
+                        </p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="main__player">
+                    <div class="player-container">
+                        <ul class="player" id="player">
+                            <!-- <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li>
+                            <li class="player__item"><div class= "player__item-name">player</div><button class="player__item-button play"></button></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+    </section>
+
+    <script src="albums.js"></script>
+	<script src="/scripts/jq.js" crossorigin="anonymous"></script>
+</body>

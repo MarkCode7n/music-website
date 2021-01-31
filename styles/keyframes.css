@@ -1,0 +1,108 @@
+@-webkit-keyframes rotateI {
+  0% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotateI {
+  0% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
+@-webkit-keyframes rotateII {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes rotateII {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes dance {
+  0% {
+    bottom: 30px;
+  }
+  50% {
+    bottom: 45px;
+  }
+  70% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+
+@keyframes dance {
+  0% {
+    bottom: 30px;
+  }
+  50% {
+    bottom: 45px;
+  }
+  70% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+
+@-webkit-keyframes btnAnn {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes btnAnn {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+/*# sourceMappingURL=keyframes.css.map */
