@@ -4,7 +4,7 @@ window.DefineWeb = window.DefineWeb || {};
 $(window).on("load", function () {
     setTimeout(() => {
         document.querySelector(".loader").classList.add("loaded")
-    }, 5000);
+    }, null);
 });
 window.DefineWeb.Text = function () {
     init();
@@ -75,7 +75,7 @@ window.DefineWeb.Player = function () {
             path: "/assets/audio-tracks/track-f-2PAC-BABY DONT CRY000.mp3",
             dur: "",
         }, ];
-        const playBtn = document.querySelector(".play i");
+        const playBtn = document.querySelector(".play");
         audio = new Audio();
         audio.src = playlist[0].path;
         $(".albums__container-header").css({
@@ -91,7 +91,7 @@ window.DefineWeb.Player = function () {
         lent = playlist.length - 1;
         $(".prev").on("click", () => {
             prev();
-            play__music(play1list[current], audio);
+            play__music(playlist[current], audio);
             return false;
         });
         $(".play").on("click", () => {
@@ -123,7 +123,7 @@ window.DefineWeb.Player = function () {
                 "background": `linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0)), url(${music.bg})center/cover no-repeat`,
             });
             playBtn.className = "";
-            playBtn.className = "fa fa-pause";
+            playBtn.className = "play pause";
 
             audio.load();
             audio.play();
@@ -138,12 +138,13 @@ window.DefineWeb.Player = function () {
 
         function play__click() {
             if (audio.paused) {
-                playBtn.className = "";
-                playBtn.className = "fa fa-pause";
+
+                playBtn.className=""
+                playBtn.className="play pause"
                 audio.play();
             } else {
-                playBtn.className = "";
-                playBtn.className = "fa fa-play";
+                playBtn.className=""
+                playBtn.className="play"
                 audio.pause();
             }
         }

@@ -97,7 +97,7 @@ window.DefineWeb.Playlist = function () {
                 play__btn.addEventListener("click", (e) => {
                     switchTrack(e);
                 })
-                //merge ans set created elements
+                //merge and set created elements
                 Player__name.textContent = PTrack[key][0]
                 player__item.appendChild(Player__name);
                 player__item.appendChild(play__btn);
@@ -106,11 +106,8 @@ window.DefineWeb.Playlist = function () {
         }
 
         KeyInTracks(PlaylistTracks1, document.getElementById("player1"))
-
         KeyInTracks(PlaylistTracks2, document.getElementById("player2"))
-
         KeyInTracks(PlaylistTracks3, document.getElementById("player3"))
-
         audio.addEventListener("ended", () => {
             document.getElementById(PLayingTrack).classList.remove("pause");
             PLayingTrack = "";

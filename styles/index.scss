@@ -455,9 +455,11 @@ img {
 			position: relative;
 			grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
 		}
-		.albums__container-info{
+
+		.albums__container-info {
 			position: relative;
 		}
+
 		&-big-image {
 			margin-top: $mb-4;
 			margin-right: auto;
@@ -506,49 +508,48 @@ img {
 			position: relative;
 			background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0)), url(https:source.unsplash.com/random)center/cover no-repeat;
 			border: 1px solid $light-blue;
+			position: relative;
+			overflow: hidden;
 
 			.header-buttons {
 				margin-top: 130px;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.btn-container {
+					position: relative;
+				}
 
 				button {
-					text-align: center;
-					font-size: $h2-font-size;
-					border: 2px solid $white-color;
-					outline: none;
-					background-color: rgba(255, 255, 255, 0.1);
-					color: $white-color;
-					border-radius: 100%;
-
-					&.prev,
-					&.next {
-						height: 40px;
-						width: 40px;
-					}
+					background-color: transparent;
+					border: none;
+					// outline: none;
+					width: 0;
+					height: 32px;
+					border-style: solid;
+					border-width: 15px 0px 15px 30px;
+					cursor: pointer;
+					transition: 100ms all ease-in-out;
+					border-color: transparent transparent transparent $light-yellow;
 
 					&.prev {
-						margin-right: 15px;
-
-						i {
-							margin-right: 5px;
-							margin-top: 5px;
-						}
+						margin-right: 45px;
+						transform: rotate(-180deg);
 					}
 
 					&.next {
-						margin-left: 15px;
-
-						i {
-							margin-left: 5px;
-							margin-top: 5px;
-						}
+						margin-left: 45px;
 					}
 
 					&.play {
-						height: 75px;
-						width: 75px;
+						height: 70px;
+						border-width: 35px 0 35px 60px;
 
-						i {
-							margin-left: 5px;
+						&.pause {
+							border-style: double;
+							border-width: 0px 0px 0px 60px;
 						}
 					}
 				}
@@ -590,7 +591,8 @@ img {
 					&-drag {
 						height: 100%;
 						width: 4px;
-						background-color: #fff;
+						background-color:$light-yellow
+						;
 					}
 
 					&-download {
@@ -1229,8 +1231,8 @@ img {
 	}
 }
 
-@media screen and(max-width:400px){
-	.albums__container .album-main{
+@media screen and(max-width:400px) {
+	.albums__container .album-main {
 		display: flow-root;
 	}
 }
