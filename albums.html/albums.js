@@ -10,7 +10,7 @@ window.DefineWeb.Playlist = function () {
     !(() => {
         let audio, path, ext, IsPlaying, PlaylistTracks1, PlaylistTracks2, PlaylistTracks3, PLayingTrack;
         audio = new Audio;
-        audio.volume = 0.13;
+        // audio.volume = 0.13;
         path = "./audios/";
         ext = ".mp3";
         // checking for fallbacks for our extension ".mp3"
@@ -23,7 +23,9 @@ window.DefineWeb.Playlist = function () {
         }
         IsPlaying = false;
 
-
+        const player1 = document.getElementById("player1");
+        const player2 = document.getElementById("player2")
+        const player3 = document.getElementById("player3")
         // PlaylistTracks1 : [name,src]->
         PlaylistTracks1 = {
             "t1": ["Baby don't cry", "BABY_DONT_CRY000"],
@@ -35,21 +37,21 @@ window.DefineWeb.Playlist = function () {
         }
         //..
         PlaylistTracks2 = {
-            "t1": ["Baby don't cry", "BABY_DONT_CRY000"],
-            "t2": ["Not Afraid", "Eminem"],
-            "t3": ["Lumba", "LUMBA"],
-            "t4": ["Mysterious girl", "Mysterious_Girl"],
-            "t5": ["Nutorious", "Nutorious"],
-            "t6": ["Ssasa", "Ssasa"],
+            "t1": ["Baby don't cry", "BABY_DONT_CRY000-a"],
+            "t2": ["Not Afraid", "Eminem-a"],
+            "t3": ["Lumba", "LUMBA-a"],
+            "t4": ["Mysterious girl", "Mysterious_Girl-a"],
+            "t5": ["Nutorious", "Nutorious-a"],
+            "t6": ["Ssasa", "Ssasa-a"],
         }
         //..
         PlaylistTracks3 = {
-            "t1": ["Baby don't cry", "BABY_DONT_CRY000"],
-            "t2": ["Not Afraid", "Eminem"],
-            "t3": ["Lumba", "LUMBA"],
-            "t4": ["Mysterious girl", "Mysterious_Girl"],
-            "t5": ["Nutorious", "Nutorious"],
-            "t6": ["Ssasa", "Ssasa"],
+            "t1": ["Baby don't cry", "BABY_DONT_CRY000-b"],
+            "t2": ["Not Afraid", "Eminem-b"],
+            "t3": ["Lumba", "LUMBA-b"],
+            "t4": ["Mysterious girl", "Mysterious_Girl-b"],
+            "t5": ["Nutorious", "Nutorious-b"],
+            "t6": ["Ssasa", "Ssasa-b"],
         }
 
         //..
@@ -94,7 +96,7 @@ window.DefineWeb.Playlist = function () {
                 play__btn.id = PTrack[key][1];
 
                 //playing audio and switching tracks
-                play__btn.addEventListener("click", (e) => {
+                play__btn.addEventListener("click", function(e) {
                     switchTrack(e);
                 })
                 //merge and set created elements
@@ -105,9 +107,12 @@ window.DefineWeb.Playlist = function () {
             }
         }
 
-        KeyInTracks(PlaylistTracks1, document.getElementById("player1"))
-        KeyInTracks(PlaylistTracks2, document.getElementById("player2"))
-        KeyInTracks(PlaylistTracks3, document.getElementById("player3"))
+
+        KeyInTracks(PlaylistTracks1,player1)
+        KeyInTracks(PlaylistTracks2,player2)
+        KeyInTracks(PlaylistTracks3,player3)
+        
+
         audio.addEventListener("ended", () => {
             document.getElementById(PLayingTrack).classList.remove("pause");
             PLayingTrack = "";

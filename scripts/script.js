@@ -16,10 +16,16 @@ window.DefineWeb.Text = function () {
 }
 
 window.DefineWeb.Player = function () {
-    let playlist, lent, audio, current;
+    let playlist, lent, audio,ext, current;
     init();
 
     function init() {
+        ext="mp3"
+            let extension = "mp3";
+            const agent = navigator.userAgent.toLowerCase();
+            if (agent.indexOf("firefox" !== -1 || agent.indexOf("opera") !== -1)) {
+                extension = "ogg"
+            }
         playlist = [{
             __id: 1,
             id: "track-a",
@@ -27,7 +33,7 @@ window.DefineWeb.Player = function () {
             title: "mysterious girl",
             sub_title: "john doe",
             bg: "/assets/audio-tracks/images/0cb013f5e6922d82f340929bcb7008db.jpg",
-            path: "/assets/audio-tracks/track-a-mysterious girl.mp3",
+            path: "/assets/audio-tracks/track-a-mysterious girl.",
             dur: "",
         }, {
             __id: 2,
@@ -36,7 +42,7 @@ window.DefineWeb.Player = function () {
             title: "lumba",
             sub_title: "john doe",
             bg: "/assets/audio-tracks/images/333eb7fd5c22464329c1f9ea6bec9d71.jpg",
-            path: "/assets/audio-tracks/track-b-(R)Artist - LUMBA.mp3",
+            path: "/assets/audio-tracks/track-b-(R)Artist - LUMBA.",
             dur: "",
         }, {
             __id: 3,
@@ -45,7 +51,7 @@ window.DefineWeb.Player = function () {
             title: "not afraid",
             sub_title: "john doe",
             bg: "/assets/audio-tracks/images/385256a1598ca1d158934e7d3dd8bc6d.jpg",
-            path: "/assets/audio-tracks/track-c-01 eminem.mp3",
+            path: "/assets/audio-tracks/track-c-01 eminem.",
             dur: "",
         }, {
             __id: 4,
@@ -54,7 +60,7 @@ window.DefineWeb.Player = function () {
             title: "sasa",
             sub_title: "john doe",
             bg: "assets/audio-tracks/images/58c71b1334c0e81bb94649b700d3b446.jpg",
-            path: "/assets/audio-tracks/track-d-02 sasa.mp3",
+            path: "/assets/audio-tracks/track-d-02 sasa.",
             dur: "",
         }, {
             __id: 5,
@@ -63,7 +69,7 @@ window.DefineWeb.Player = function () {
             title: "nutorious",
             sub_title: "john doe",
             bg: "/assets/audio-tracks/images/a62ae9f2ab9646736f14627936c7f587.jpg",
-            path: "/assets/audio-tracks/track-e-01 nutorious.mp3",
+            path: "/assets/audio-tracks/track-e-01 nutorious.",
             dur: "",
         }, {
             __id: 6,
@@ -72,12 +78,12 @@ window.DefineWeb.Player = function () {
             title: "baby don't cry",
             sub_title: "john doe",
             bg: "/assets/audio-tracks/images/e0488d84a4542865f42b9fc564fd4f89.jpg",
-            path: "/assets/audio-tracks/track-f-2PAC-BABY DONT CRY000.mp3",
+            path: "/assets/audio-tracks/track-f-2PAC-BABY DONT CRY000.",
             dur: "",
         }, ];
         const playBtn = document.querySelector(".play");
         audio = new Audio();
-        audio.src = playlist[0].path;
+        audio.src = playlist[0].path+ext;
         $(".albums__container-header").css({
             "background": `linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0)), url(${playlist[0].bg})center/cover no-repeat`,
         });
@@ -86,7 +92,7 @@ window.DefineWeb.Player = function () {
         $(".h_duration").text(playlist[0].dur);
         $(".l_duration").text(playlist.dur);
 
-        audio.volume = 0.10;
+        // audio.volume = 0.10;
         current = 0;
         lent = playlist.length - 1;
         $(".prev").on("click", () => {
@@ -115,7 +121,7 @@ window.DefineWeb.Player = function () {
         });
 
         function play__music(music, player) {
-            player.src = music.path;
+            player.src = music.path+ext;
             $(".h_main-title").text(music.title);
             $(".h_sub-title").text(music.sub_title);
             $(".h_duration").text(music.dur);
